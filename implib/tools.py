@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 #from implib import bresenham
 from implib import point
 from math import sqrt
