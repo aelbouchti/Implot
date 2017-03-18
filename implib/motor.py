@@ -10,7 +10,6 @@ class motor():
 
     """   this section still need some work
     changing gpio controll to class in gpiotools """
-    
     def __init__(self, pins):
         self.Pins = pins
 
