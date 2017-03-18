@@ -67,7 +67,7 @@ class commander():
         self.Sensor_Pin._set_pin(pin)
 
     def _define_step_unity(self, step):
-        self.Motor._movesteps(step)
+        self.Motor._move_steps(step)
         self.Adjusted_Step = step
 
     def _pin_status(self):
