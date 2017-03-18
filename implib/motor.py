@@ -74,7 +74,7 @@ class commander():
         return self.Sensor_Pin._status()
 
     def _move_one_step(self, sens):
-        self.Motor._movesteps(self.Ajusted_Step*sens)
+        self.Motor._move_steps(self.Ajusted_Step*sens)
 
     def _is_home(self):
         return self.Home
