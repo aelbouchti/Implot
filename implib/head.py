@@ -24,4 +24,4 @@ class draw():
     def _execute(self):
         for point in CodeToExecute.PointByPointRoad:
             ####
-            self.Cursor._move_axe_one_step(Tool._get_axe_sens(self.Cursor.Position, point))
+            self.Cursor._move_axe_one_step(self.Tool._get_axe_sens(self.Cursor.Position, point))
