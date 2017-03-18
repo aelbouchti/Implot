@@ -1,6 +1,6 @@
 from implib import tools
 from implib import gpiotools
-from point import *
+from point import point
 
 class motor():
     #Motor Class : input pins
