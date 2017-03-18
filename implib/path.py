@@ -1,12 +1,12 @@
 from implib import point
-import numpy as np
+#import numpy as np
 from implib import bresenham
 
 class path():
     def __init__(self):
         self.PathPoints = []
-        self.Start = Point()
-        self.End = Point()
+        self.Start = point()
+        self.End = point()
         self.Operation = False
         self.sizepapo = len(self.PathPoints)
         self.Pat = []
