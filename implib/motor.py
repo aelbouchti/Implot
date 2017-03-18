@@ -93,7 +93,7 @@ class cursor():
     #_move_axe_one_step : input axe sens
 
     def __init__(self, *args):
-        self.CommandersList = []
+        self.CommanderList = []
         self.ToolDecrypt = tools_decrypt()
         for i, j in enumerate(args):
             self.CommanderList.append(commander(self.ToolDecrypt._infocom(j)))
