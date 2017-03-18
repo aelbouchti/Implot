@@ -11,14 +11,14 @@ class code():
             a, b, c = self.CheckPoints[i]._xyz()
             code += str(self.OperativePaths[i])
             code += '.' + str(a) + '.' +str(b) + '.' + str(c)
-        self.Code=code
+        self.Code = code
 
-    def _decodedata(self,code):
+    def _decodedata(self, code):
         pp = []
         op = []
         recode = code.split('.')
-        for i in range(0,len(recode),4):
-            pp += [ Point(int(recode[i]), int(recode[i+1]), int(recode[i+2]))]
+        for i in range(0, len(recode), 4):
+            pp += [Point(int(recode[i]), int(recode[i+1]), int(recode[i+2]))]
             op += [recode[i+3]]
         self.CheckPoints = pp
         self.OperativePaths = op
