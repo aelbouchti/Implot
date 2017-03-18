@@ -1,5 +1,5 @@
-from path.py import path
-from tools.py import tools_point, tools_2d
+#from path.py import path
+from tools.py import tools_point
 
 class code():
     def __init__(self):
@@ -22,7 +22,7 @@ class code():
         self.Code = code
         recode = code.split('.')
         for i in range(0, len(recode), 4):
-            pp += [point(int(recode[i]), int(recode[i+1]), int(recode[i+2]))]
+            pp += [oint(int(recode[i]), int(recode[i+1]), int(recode[i+2]))]
             op += [recode[i+3]]
         self.CheckPoints = pp
         self.OperativePaths = op
