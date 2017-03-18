@@ -1,6 +1,6 @@
 from implib import tools
 from implib import gpiotools
-from implib import point
+from point import *
 
 class motor():
     #Motor Class : input pins
@@ -22,7 +22,7 @@ class motor():
     def _move_steps(self, a):
         self._move(a)
 
-    def _set_pins(self,pins):
+    def _set_pins(self, pins):
         self.Pins = pins
 
 class sensor():
