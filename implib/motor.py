@@ -21,7 +21,7 @@ class motor():
     def _move_steps(self, a):
         self._move(a)
 
-    def _set_pins(self,pins):
+    def _set_pins(self, pins):
         self.Pins = pins
 
 class sensor():
@@ -72,7 +72,7 @@ class commander():
     def _pin_status(self):
         return self.Sensor_Pin._status()
 
-    def _move_one_step(self,sens):
+    def _move_one_step(self, sens):
         self.Motor._movesteps(self.Ajusted_Step*sens)
 
     def _is_home(self):
@@ -97,7 +97,7 @@ class cursor():
         for i, j in enumerate(args):
             self.CommanderList.append(commander(ToolDecrypt._infocom(j)))
         self.Type = len(self.CommandersList)
-        self.Position = Point()
+        self.Position = point()
 
     def _actual_position(self):
         return self.Position.xyz()
@@ -109,5 +109,5 @@ class cursor():
         for i in self.CommanderList:
             i._home()
 
-    def _move_axe_one_step(self,axe,sens):
+    def _move_axe_one_step(self, axe, sens):
         self.CommanderList[axe]._move_one_step(sens)
