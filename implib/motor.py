@@ -1,4 +1,4 @@
-from tools.py import tools_decrypt()
+from tools.py import tools_decrypt
 #from gpio import *
 from point import point
 
