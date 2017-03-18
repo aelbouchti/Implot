@@ -36,4 +36,4 @@ class code():
         l = len(self.CheckPoints)
         for i in range(l-1):
             ##########
-            self.PointByPointRoad += Tool._optimise(Tool._brenseham(self.CheckPoints[i], self.CheckPoints[i+1]))
+            self.PointByPointRoad += self.Tool._optimise(self.Tool._brenseham(self.CheckPoints[i], self.CheckPoints[i+1]))
