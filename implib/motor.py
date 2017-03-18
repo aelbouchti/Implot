@@ -1,6 +1,6 @@
-from implib import tools
-from implib import gpiotools
-from implib import point
+from tools.py import tools_decrypt()
+#from gpio import *
+from point import point
 
 class motor():
     #Motor Class : input pins
@@ -22,7 +22,7 @@ class motor():
     def _move_steps(self, a):
         self._move(a)
 
-    def _set_pins(self,pins):
+    def _set_pins(self, pins):
         self.Pins = pins
 
 class sensor():
@@ -96,7 +96,7 @@ class cursor():
         self.CommandersList = []
         self.ToolDecrypt = tools_decrypt()
         for i, j in enumerate(args):
-            self.CommanderList.append(commander(ToolDecrypt._infocom(j)))
+            self.CommanderList.append(commander(self.ToolDecrypt._infocom(j)))
         self.Type = len(self.CommandersList)
         self.Position = point()
 
@@ -110,7 +110,7 @@ class cursor():
         for i in self.CommanderList:
             i._home()
 
-    def _configure_step_axe(self,axe,step):
+    def _configure_step_axe(self, axe, step):
         self.CommandList[axe]._define_step_unity(step)
 
     def _move_axe_one_step(self, axe, sens):
