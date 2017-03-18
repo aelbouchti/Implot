@@ -1,8 +1,8 @@
 from point.py import point
-from path.py import path
+#from path.py import path
 from code.py import code
-from motor.py import motor, sensor, commander, cursor
-from tools.py import tools_point, tools_2d
+from motor.py import cursor
+from tools.py import tools_point
 
 
 class draw():
@@ -22,6 +22,6 @@ class draw():
         self.CodeToExecute._ben_ben()
 
     def _execute(self):
-        for point in CodeToExecute.PointByPointRoad:
+        for point in self.CodeToExecute.PointByPointRoad:
             ####
             self.Cursor._move_axe_one_step(self.Tool._get_axe_sens(self.Cursor.Position, point))
