@@ -1,3 +1,5 @@
+#path.py is unused in programm looking for delete
+
 from implib import point
 #import numpy as np
 from implib import bresenham
