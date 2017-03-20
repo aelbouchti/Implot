@@ -1,8 +1,8 @@
 #from point.py import point
 #from path.py import path
-from code.py import code
-from motor.py import cursor
-from tools.py import tools_point
+from code import code
+from motor import cursor
+from tools import tools_point
 
 
 class draw():

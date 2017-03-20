@@ -1,6 +1,6 @@
 #from path.py import path
-from tools.py import tools_point
-from point.py import point
+from tools import tools_point
+from point import point
 
 class code():
     def __init__(self):

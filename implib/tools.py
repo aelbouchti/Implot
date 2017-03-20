@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
+
 #from implib import bresenham
 from implib import point
-from maths import sqrt
+from math import sqrt
 class tools_point():
 
     def __init__(self):
@@ -12,18 +14,20 @@ class tools_point():
     def _give_function_point(a,b):
         pass
 
-    def _dist_point(a, b, c):
-        pass
+    def _dist_point_segment(a, b, c):
+        self._give
 
-    def _derivate_point(q, p):
-        pass
+    def _derivate_point(p, q):
+        return q.X-p.X, q.Y-p.Y, q.Z-p.Z
+
+
 
 class tools_algebra():
     def __init__(self):
         self.functions = []
 
     def _pgcd (a,b):
-        while a%b = 0:
+        while a%b == 0:
             a, b = b, a%b
         return b
 
@@ -54,48 +58,39 @@ class tools_2d():
         self.functions = []
 
     def _derivate(p,q):
-      return q.X-p.X, q.X-p.X
+        return q.X-p.X, q.Y-p.Y
 
-    def _bresenhampath(p, q):
-		""" Bresenham's Algorithm for Line
-			Start and End are Point() classes
-			Ouput: Modifying the pathpoints to bresenhams points
-		"""
-		x1, y1 = p.X, p.Y
-		x2, y2 = q.X, q.Y
-		#Calculating differentials dx,dy
-		dx = x2-x1
-		dy = y2-y1
-		#defining if Line passing threw start and end is steep or not
-		is_steep = abs(dy) > abs(dx)
-		if is_steep:
-			x1, y1 = y1, x1
-			x2, y2 = y2, x2
-		#swapping points if its necessary
-		swapped = False
-		if x1 > x2:
-			x1, x2 = x2, x1
-			y1, y2 = y2, y1
-			swapped = True
-		#recalculating dx,dy
-		dx = x2-x1
-		dy = y2-y1
-		#Calculating Error
-		error = int(dx/2.0)
-		#ystep is -1 or +1
-		ystep = 1 if y1 < y2 else -1
-		y = y1
-		points = []
-		for x in range(x1, x2+1):
-			coord = point(y, x) if is_steep else point(x, y)
-			points.append(coord)
-			error -= abs(dy)
-			if error < 0:
-				y += ystep
-				error += dx
+    def bresenhampath(p, q):
+        x1, y1 = p.X, p.Y
+        x2, y2 = q.X, q.Y
+        dx = q.X-p.X
+        dy = q.Y-p.Y
+        is_steep = abs(dy) > abs(dx)
+        if is_steep:
+            x1, y1 = y1, x1
+            x2, y2 = y2, x2
+        swapped = False
+        if x1 > x2:
+            x1, x2 = x2, x1
+            y1, y2 = y2, y1
+            swapped = True
+        dx = x2-x1
+        dy = y2-y1
+        error = int(dx/2.0)
+        ystep = 1 if y1 < y2 else -1
+        y = y1
+        points = []
+        for x in range(x1, x2+1):
+            coord = point(y, x) if is_steep else point(x, y)
+            points.append(coord)
+            error -= abs(dy)
+            if error < 0:
+                y += ystep
+                error += dx
         if swapped:
             points.reverse()
-		return points
+        return points
+
 
     def _wich_dir():
         a, b = derivate(p, q)
@@ -107,6 +102,6 @@ class tools_2d():
             if a>0:
                 return 1, -1
             return -1,1
-            
+
     def _vector_dir(p, q):
         return [i>0 for i in self._derivate(p, q)]

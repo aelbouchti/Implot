@@ -1,4 +1,4 @@
-from tools.py import tools_decrypt()
+from tools import tools_decrypt
 #from gpio import *
 from point import point
 
@@ -67,14 +67,14 @@ class commander():
         self.Sensor_Pin._set_pin(pin)
 
     def _define_step_unity(self, step):
-        self.Motor._movesteps(step)
+        self.Motor._move_steps(step)
         self.Adjusted_Step = step
 
     def _pin_status(self):
         return self.Sensor_Pin._status()
 
     def _move_one_step(self, sens):
-        self.Motor._movesteps(self.Ajusted_Step*sens)
+        self.Motor._move_steps(self.Ajusted_Step*sens)
 
     def _is_home(self):
         return self.Home
@@ -93,7 +93,7 @@ class cursor():
     #_move_axe_one_step : input axe sens
 
     def __init__(self, *args):
-        self.CommandersList = []
+        self.CommanderList = []
         self.ToolDecrypt = tools_decrypt()
         for i, j in enumerate(args):
             self.CommanderList.append(commander(self.ToolDecrypt._infocom(j)))
