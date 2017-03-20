@@ -1,6 +1,6 @@
 class point():
-    #declaration point xyz 3D
     
+    #modification 20-mars :added spaces
     def __init__(self, *args):
         self.X = 0
         self.Y = 0
